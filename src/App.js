@@ -1,9 +1,11 @@
 import "./App.css";
+import { Login } from "./components/Login/Login";
+import { Register } from "./components/Register/Register";
 
 export const App = () => {
   return (
-    <div>
-      <h1>Go Scrum</h1>
-    </div>
+    <>
+      <Login />
+    </>
   );
 };
