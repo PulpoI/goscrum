@@ -1,0 +1,77 @@
+
+
+.auth {
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth > form {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.auth > form > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.auth > form > div > *:not(label) {
+  padding: 8px 0;
+}
+
+.auth input.error,
+.auth select.error,
+.auth textarea.error {
+  border-color: #ff0000;
+}
+
+.auth > form > div a {
+  text-decoration: none;
+  color: var(--global-primary-color);
+}
+
+.auth input,
+.auth select {
+  border-radius: var(--global-radius);
+  border: var(--global-border);
+}
+
+.auth button {
+  transition: all 0.3s ease-out;
+  background-color: var(--global-primary-color);
+  border-radius: var(--global-radius);
+  border: 0;
+  color: var(--global-secondary-color);
+  padding: 15px !important;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.auth button:hover {
+  background-color: var(--global-secondary-color);
+  color: var(--global-primary-color);
+}
+
+
+@media screen and (min-width: 600px) {
+  .auth {
+    background-color: var(--global-secondary-color);
+  }
+  .auth > form {
+    border: var(--global-border);
+    width: 400px;
+    border-radius: var(--global-radius);
+    box-shadow: gray 0px 48px 100px 0px;
+    background-color: white;
+  }
+}

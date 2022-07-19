@@ -1,0 +1,24 @@
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input.error,
+.task-form select.error,
+.task-form textarea.error {
+  border-color: #ff0000;
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+}
