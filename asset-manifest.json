@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goscrum/static/css/main.f32e102c.css",
-    "main.js": "/goscrum/static/js/main.c36a7301.js",
+    "main.js": "/goscrum/static/js/main.11e81f45.js",
     "static/js/305.776d2cb3.chunk.js": "/goscrum/static/js/305.776d2cb3.chunk.js",
     "static/js/175.e351bdff.chunk.js": "/goscrum/static/js/175.e351bdff.chunk.js",
     "static/css/784.cd8fe85b.chunk.css": "/goscrum/static/css/784.cd8fe85b.chunk.css",
@@ -15,7 +15,7 @@
     "static/js/830.929067cf.chunk.js": "/goscrum/static/js/830.929067cf.chunk.js",
     "index.html": "/goscrum/index.html",
     "main.f32e102c.css.map": "/goscrum/static/css/main.f32e102c.css.map",
-    "main.c36a7301.js.map": "/goscrum/static/js/main.c36a7301.js.map",
+    "main.11e81f45.js.map": "/goscrum/static/js/main.11e81f45.js.map",
     "305.776d2cb3.chunk.js.map": "/goscrum/static/js/305.776d2cb3.chunk.js.map",
     "175.e351bdff.chunk.js.map": "/goscrum/static/js/175.e351bdff.chunk.js.map",
     "784.cd8fe85b.chunk.css.map": "/goscrum/static/css/784.cd8fe85b.chunk.css.map",
@@ -30,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.f32e102c.css",
-    "static/js/main.c36a7301.js"
+    "static/js/main.11e81f45.js"
   ]
 }
