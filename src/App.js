@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import "./App.css";
+import Registered from "./components/Views/Registered/Registered";
 const Error404 = lazy(() => import("./components/Views/Error404/Error404"));
 const Login = lazy(() => import("./components/Views/auth/Login/Login"));
 const Tasks = lazy(() => import("./components/Views/Tasks/Tasks"));
@@ -11,7 +12,7 @@ const Register = lazy(() =>
 );
 
 const RequireAuth = ({ children }) => {
-  if (!localStorage.getItem("logged")) {
+  if (!localStorage.getItem("token")) {
     return <Navigate to="/login" replace={true} />;
   }
   return children;
@@ -57,6 +58,23 @@ export const App = () => {
             >
               <Suspense fallback={<div>Loading...</div>}>
                 <Login />
+              </Suspense>
+            </motion.div>
+          }
+        />
+        <Route
+          exact
+          path="/registered/:teamID"
+          element={
+            <motion.div
+              className="page"
+              initial="out"
+              animate="in"
+              exit="out"
+              variants={pageTransition}
+            >
+              <Suspense fallback={<div>Loading...</div>}>
+                <Registered />
               </Suspense>
             </motion.div>
           }

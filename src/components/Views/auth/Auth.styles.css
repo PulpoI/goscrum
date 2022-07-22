@@ -35,6 +35,10 @@
   border-color: #ff0000;
 }
 
+.error-message {
+  color: #ff0000;
+}
+
 .auth > form > div a {
   text-decoration: none;
   color: var(--global-primary-color);
@@ -44,6 +48,13 @@
 .auth select {
   border-radius: var(--global-radius);
   border: var(--global-border);
+}
+
+.auth > form > div > input,
+.auth > form > div > select {
+  
+  padding: 8px !important;
+  
 }
 
 .auth button {

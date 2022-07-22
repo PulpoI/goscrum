@@ -3,15 +3,18 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 import { Switch, FormControlLabel } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
 
 import "../Auth.styles.css";
-import { Link } from "react-router-dom";
+
+const { REACT_APP_API_ENDPOINT: API_ENDPOINT } = process.env;
 
 export default function Register() {
   const [data, setData] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://goscrum-api.alkemy.org/")
+    fetch(`https:${API_ENDPOINT}auth/data`)
       .then((response) => response.json())
       .then((data) => setData(data.result));
   }, []);
@@ -46,7 +49,28 @@ export default function Register() {
   };
 
   const onSubmit = () => {
-    alert();
+    const teamID = !values.teamID ? uuidv4() : values.teamID;
+    fetch(`https:${API_ENDPOINT}auth/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: {
+          userName: values.userName,
+          password: values.password,
+          email: values.email,
+          teamID,
+          role: values.role,
+          continent: values.continent,
+          region: values.region,
+        },
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) =>
+        navigate("/registered/" + data?.result?.user?.teamID, { replace: true })
+      );
   };
 
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
@@ -141,11 +165,13 @@ export default function Register() {
             className={errors.role && touched.role ? "error" : ""}
           >
             <option value="">Seleccionar rol...</option>
-            {data?.role?.map((option) => (
+            {data?.Rol?.map((option) => (
               <option value={option} key={option}>
                 {option}
               </option>
             ))}
+            {/* <option value="Team Leader">Team Leader</option>
+            <option value="Team Member">Team Member</option> */}
           </select>
 
           {errors.role && touched.role && (
@@ -164,14 +190,14 @@ export default function Register() {
             className={errors.continent && touched.continent ? "error" : ""}
           >
             <option value="">Seleccionar continente...</option>
-            {data?.continent?.map((option) => (
+            {data?.continente?.map((option) => (
               <option value={option} key={option}>
                 {option}
               </option>
             ))}
-            <option value="America">America</option>
+            {/* <option value="America">America</option>
             <option value="Europa">Europa</option>
-            <option value="Otro">Otro</option>
+            <option value="Otro">Otro</option> */}
           </select>
 
           {errors.continent && touched.continent && (
@@ -194,10 +220,10 @@ export default function Register() {
                   {option}
                 </option>
               ))}
-              <option value="Latam">Latam</option>
+              {/* <option value="Latam">Latam</option>
               <option value="Brasil">Brasil</option>
               <option value="America del Norte">America del Norte</option>
-              <option value="Otro">Otro</option>
+              <option value="Otro">Otro</option> */}
             </select>
 
             {errors.region && touched.region && (
@@ -207,7 +233,7 @@ export default function Register() {
         )}
 
         <div>
-          <button type="submit">Iniciar sesión</button>
+          <button type="submit">Registrarme</button>
         </div>
         <div>
           <Link to="/login">Ir a iniciar sesión</Link>
