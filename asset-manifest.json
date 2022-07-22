@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/goscrum/static/css/main.f32e102c.css",
+    "main.js": "/goscrum/static/js/main.c36a7301.js",
+    "static/js/305.776d2cb3.chunk.js": "/goscrum/static/js/305.776d2cb3.chunk.js",
+    "static/js/175.e351bdff.chunk.js": "/goscrum/static/js/175.e351bdff.chunk.js",
+    "static/css/784.cd8fe85b.chunk.css": "/goscrum/static/css/784.cd8fe85b.chunk.css",
+    "static/js/784.5e67365f.chunk.js": "/goscrum/static/js/784.5e67365f.chunk.js",
+    "static/css/631.a61ecbd8.chunk.css": "/goscrum/static/css/631.a61ecbd8.chunk.css",
+    "static/js/631.b32d0000.chunk.js": "/goscrum/static/js/631.b32d0000.chunk.js",
+    "static/css/682.cd8fe85b.chunk.css": "/goscrum/static/css/682.cd8fe85b.chunk.css",
+    "static/js/682.9cdafa0f.chunk.js": "/goscrum/static/js/682.9cdafa0f.chunk.js",
+    "static/js/420.b4077ba6.chunk.js": "/goscrum/static/js/420.b4077ba6.chunk.js",
+    "static/js/599.87a902f2.chunk.js": "/goscrum/static/js/599.87a902f2.chunk.js",
+    "static/js/830.929067cf.chunk.js": "/goscrum/static/js/830.929067cf.chunk.js",
+    "index.html": "/goscrum/index.html",
+    "main.f32e102c.css.map": "/goscrum/static/css/main.f32e102c.css.map",
+    "main.c36a7301.js.map": "/goscrum/static/js/main.c36a7301.js.map",
+    "305.776d2cb3.chunk.js.map": "/goscrum/static/js/305.776d2cb3.chunk.js.map",
+    "175.e351bdff.chunk.js.map": "/goscrum/static/js/175.e351bdff.chunk.js.map",
+    "784.cd8fe85b.chunk.css.map": "/goscrum/static/css/784.cd8fe85b.chunk.css.map",
+    "784.5e67365f.chunk.js.map": "/goscrum/static/js/784.5e67365f.chunk.js.map",
+    "631.a61ecbd8.chunk.css.map": "/goscrum/static/css/631.a61ecbd8.chunk.css.map",
+    "631.b32d0000.chunk.js.map": "/goscrum/static/js/631.b32d0000.chunk.js.map",
+    "682.cd8fe85b.chunk.css.map": "/goscrum/static/css/682.cd8fe85b.chunk.css.map",
+    "682.9cdafa0f.chunk.js.map": "/goscrum/static/js/682.9cdafa0f.chunk.js.map",
+    "420.b4077ba6.chunk.js.map": "/goscrum/static/js/420.b4077ba6.chunk.js.map",
+    "599.87a902f2.chunk.js.map": "/goscrum/static/js/599.87a902f2.chunk.js.map",
+    "830.929067cf.chunk.js.map": "/goscrum/static/js/830.929067cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f32e102c.css",
+    "static/js/main.c36a7301.js"
+  ]
+}

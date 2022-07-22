@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoscrum=self.webpackChunkgoscrum||[]).push([[175],{2175:function(r,e,n){n.r(e),n.d(e,{default:function(){return s}});var u=n(184);function s(){return(0,u.jsxs)(u.Fragment,{children:[(0,u.jsx)("h1",{children:"Error 404"}),(0,u.jsx)("p",{children:"This page could not be found. Please try again later."})]})}}}]);
+//# sourceMappingURL=175.e351bdff.chunk.js.map

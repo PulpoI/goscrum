@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoscrum=self.webpackChunkgoscrum||[]).push([[305],{5305:function(r,e,n){n.r(e),n.d(e,{default:function(){return o}});var c=n(184);function o(){return(0,c.jsxs)("section",{children:[(0,c.jsx)("h1",{children:"Colabor\xe1"}),(0,c.jsx)("a",{href:"http://google.com",target:"_blank",rel:"noreferrer",children:"Dona"})]})}}}]);
+//# sourceMappingURL=305.776d2cb3.chunk.js.map
