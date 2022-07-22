@@ -7,7 +7,7 @@ import { swal } from "../../../../utils/swal";
 
 import "../Auth.styles.css";
 
-const { REACT_APP_API_ENDPOINT: API_ENDPOINT } = process.env;
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 export default function Login() {
   const navigate = useNavigate();

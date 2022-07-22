@@ -18,7 +18,7 @@ export const tasksFailure = (error) => ({
 
 export const getTasks = (path) => (dispatch) => {
   dispatch(tasksRequest());
-  fetch(`https:${API_ENDPOINT}task/${path}`, {
+  fetch(`https://goscrum-api.alkemy.org/task/${path}`, {
     headers: {
       "Content-type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("token"),

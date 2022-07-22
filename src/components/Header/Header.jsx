@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 import "./Header.styles.css";
 
 export const Header = () => {
@@ -17,7 +18,6 @@ export const Header = () => {
 
   return (
     <header>
-      <img src="/img/logo.png" alt="logo" />
       <div className="wrapper_right_header">
         <div>Tareas creadas: {tasks?.length}</div>
         <div>{localStorage.getItem("userName")}</div>
