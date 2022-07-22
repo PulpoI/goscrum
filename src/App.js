@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import "./App.css";
 import Registered from "./components/Views/Registered/Registered";
+
+const Donate = lazy(() => import("./components/Views/Donate/Donate"));
 const Error404 = lazy(() => import("./components/Views/Error404/Error404"));
 const Login = lazy(() => import("./components/Views/auth/Login/Login"));
 const Tasks = lazy(() => import("./components/Views/Tasks/Tasks"));
@@ -108,6 +110,22 @@ export const App = () => {
             >
               <Suspense fallback={<div>Loading...</div>}>
                 <Error404 />
+              </Suspense>
+            </motion.div>
+          }
+        />
+        <Route
+          path="/donate"
+          element={
+            <motion.div
+              className="page"
+              initial="out"
+              animate="in"
+              exit="out"
+              variants={pageTransition}
+            >
+              <Suspense fallback={<div>Loading...</div>}>
+                <Donate />
               </Suspense>
             </motion.div>
           }

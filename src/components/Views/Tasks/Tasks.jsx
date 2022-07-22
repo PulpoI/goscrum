@@ -1,4 +1,4 @@
-import "./Tasks.styles.css";
+import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import {
@@ -7,41 +7,42 @@ import {
   FormControlLabel,
   FormControl,
 } from "@mui/material/";
+import { useSelector, useDispatch } from "react-redux";
 import debounce from "lodash.debounce";
+
+import "./Tasks.styles.css";
+import {
+  getTasks,
+  deleteTask,
+  editTaskStatus,
+} from "../../../store/actions/tasksActions";
 import { useResize } from "../../../hooks/useResize";
 import { Header } from "../../Header/Header";
 import { Card } from "../../Card/Card";
 import { TaskForm } from "../../TaskForm/TaskForm";
-import { useEffect, useState } from "react";
-import { createSearchParams } from "react-router-dom";
-
-const { REACT_APP_API_ENDPOINT: API_ENDPOINT } = process.env;
 
 export default function Tasks() {
   const [list, setList] = useState(null);
   const [renderList, setRenderList] = useState(null);
   const [tasksFromWho, setTasksFromWho] = useState("ALL");
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const { isPhone } = useResize();
+  const dispatch = useDispatch();
+
+  const { loading, error, tasks } = useSelector((state) => {
+    return state.tasksReducer;
+  });
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`https:${API_ENDPOINT}task${tasksFromWho === "ME" ? "/me" : ""}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setList(data.result);
-        setRenderList(data.result);
-        setTimeout(() => {
-          setLoading(false);
-        }, 300);
-      });
+    dispatch(getTasks(tasksFromWho === "ME" ? "me" : ""));
   }, [tasksFromWho]);
+
+  useEffect(() => {
+    if (tasks?.length) {
+      setList(tasks);
+      setRenderList(tasks);
+    }
+  }, [tasks]);
 
   useEffect(() => {
     if (search) {
@@ -51,14 +52,34 @@ export default function Tasks() {
     }
   }, [search]);
 
+  const handleDelete = (id) => dispatch(deleteTask(id));
+
+  const handleEditCardStatus = (data) => dispatch(editTaskStatus(data));
+
+  if (error) return <div>Hay un error</div>;
+
   const renderAllCards = () => {
-    return renderList?.map((data) => <Card key={data._id} data={data} />);
+    return renderList?.map((data) => (
+      <Card
+        key={data._id}
+        data={data}
+        deleteCard={handleDelete}
+        editCardStatus={handleEditCardStatus}
+      />
+    ));
   };
 
   const renderColumnCards = (text) => {
     return renderList
       ?.filter((data) => data.status === text)
-      .map((data) => <Card key={data._id} data={data} />);
+      .map((data) => (
+        <Card
+          key={data._id}
+          data={data}
+          deleteCard={handleDelete}
+          editCardStatus={handleEditCardStatus}
+        />
+      ));
   };
 
   const handleChangeImportance = (event) => {
